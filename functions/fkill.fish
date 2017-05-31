@@ -1,7 +1,13 @@
 function fkill -d "Kill one or more processes with interactive fuzzy process selection."
-    ps axf | fzf --no-sort --tac --multi | awk '{print $1}' | read --array --null ps_set
-    for p in $ps_set
+
+    set -l tmp (tempfile)
+    ps axf | eval $fuzzi_selector  > $tmp
+
+    for p in (cat $tmp)
         echo "Killing [$p]"
-        kill $argv $p
+        set -l pid (echo $p | awk '{print $1}')
+        kill $argv $pid
     end
+
+    rm -f $tmp
 end
