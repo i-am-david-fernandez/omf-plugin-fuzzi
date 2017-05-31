@@ -12,9 +12,11 @@ function fbmk -d "Create/navigate to bookmarked directories with interactive fuz
         end
     end
 
-    cat $bookmark_file | fzf --no-sort --tac | read bookmark
-    if test -n "$bookmark"
-        set -l bookmark_dir (echo $bookmark | sed -e 's/\s*#.*//g')
-        cd $bookmark_dir
+    if test -e $bookmark_file
+        cat $bookmark_file | fzf --no-sort --tac | read bookmark
+        if test -n "$bookmark"
+           set -l bookmark_dir (echo $bookmark | sed -e 's/\s*#.*//g')
+           cd $bookmark_dir
+        end
     end
 end
