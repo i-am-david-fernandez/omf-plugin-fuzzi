@@ -7,5 +7,5 @@ function insegit -d "Git command wrapper with interactive fuzzy file selection."
     end
     rm -f $tmp
 
-    git $argv $file_set
+    commandline --replace "git $argv $file_set"
 end

@@ -7,5 +7,5 @@ function insesvn -d "Subversion command wrapper with interactive fuzzy file sele
     end
     rm -f $tmp
 
-    svn $argv $file_set
+    commandline --replace "svn $argv $file_set"
 end
