@@ -78,6 +78,13 @@ $ insesvn
 Construct an `svn` operation commandline for one or more files. The list of files presented is that obtained via `svn status`, and the operation performed is the expansion of `svn <options> <selected files>`, so, for example, one could run `insesvn commit` to select which files to commit rather than typing each filename. Note that the list of presented files includes the `svn status` indicators (e.g., `M` for modified) to aid selection, but only the filenames are included on the expanded commandline. Further, the result is placed at the prompt for use/editing but is not executed.
 
 
+```fish
+$ insefiles <options>
+```
+
+Populate the commandline with a list of files/directories. The presented list of files is generated via `find ./ <options>` and so additional `find` options may be provided (e.g., `-maxdepth N` to limit the search depth).
+
+
 
 # License
 
