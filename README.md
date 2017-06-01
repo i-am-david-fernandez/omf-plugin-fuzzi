@@ -44,6 +44,13 @@ Select something from commandline history for reuse. This will place the selecte
 
 
 ```fish
+$ insemark {--set <comment>}
+```
+
+Create or navigate to a bookmarked directory. Use `--set` to store the current directory in the list of bookmarks with an optional comment. Use with no options to present the list of stored bookmarks for selection and navigation. Comments are displayed in the presented list.
+
+
+```fish
 $ insekill <options>
 ```
 
@@ -62,8 +69,6 @@ $ insegit <options>
 ```
 
 Construct a `git` operation commandline for one or more files. The list of files presented is that obtained via `git status --porcelain`, and the operation is the expansion of `git <options> <selected files>`, so, for example, one could run `insegit add` to select which files to add rather than typing each filename. Note that the list of presented files includes the `git status` indicators (e.g., `M` for modified) to aid selection, but only the filenames are included on the expanded commandline. Further, the result is placed at the prompt for use/editing but is not executed.
-
-
 
 
 ```fish
