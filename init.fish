@@ -5,4 +5,4 @@
 # * $path          package path
 # * $dependencies  package dependencies
 
-set -q inse_selector; or set -g inse_selector "fzf --reverse --multi"
+set -q inse_selector; or set -g inse_selector "fzf --reverse --multi --ansi"

@@ -28,7 +28,7 @@ The following may be set (e.g., in `config.fish`) to override defaults:
 
 * `inse_selector`
   * The commandline of the interactive selector to be used. Examples:
-    * `fzf --reverse --multi` to use [fzf](https://github.com/junegunn/fzf). This is the default if not set elsewhere.
+    * `fzf --reverse --multi --ansi` to use [fzf](https://github.com/junegunn/fzf). This is the default if not set elsewhere.
     * `peco` to use [peco](https://github.com/peco/peco).
     * `percol ` to use [percol](https://github.com/mooz/percol).
   * Note that, while not all plugin commands make use of multiple selections, the commandline specified should provide for multiple selections if you wish to support multiple selections where it makes sense.
