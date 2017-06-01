@@ -24,14 +24,21 @@ $ omf install inse
 
 ## Configuration
 
+In summary, this plugin should "just work" out of the box. There are some configurable items (below), but defaults are intelligently selected/discovered where possible.
+
 The following may be set (e.g., in `config.fish`) to override defaults:
 
 * `inse_selector`
   * The commandline of the interactive selector to be used. Examples:
-    * `fzf --reverse --multi --ansi` to use [fzf](https://github.com/junegunn/fzf). This is the default if not set elsewhere.
+    * `fzf --reverse --multi --ansi` to use [fzf](https://github.com/junegunn/fzf).
     * `peco` to use [peco](https://github.com/peco/peco).
-    * `percol ` to use [percol](https://github.com/mooz/percol).
-  * Note that, while not all plugin commands make use of multiple selections, the commandline specified should provide for multiple selections if you wish to support multiple selections where it makes sense.
+    * `percol` to use [percol](https://github.com/mooz/percol).
+  * If not explicitly set, the first of `fzf`, `peco` and `percol` to be found will be used (the order being based simply on a subjective ranking of performance/function).
+  * As some plugin commands allow for multiple selections, the commandline you specify should provide for multiple selections where possible, if you wish to support multiple selections.
+
+* `inse_colourised`
+  * Some selectors (`fzf` for example) can parse colour codes, and so if this configuration option is set to a non-empty string (e.g., `enabled`), some plugin commands will colourise the presented list items. For example, `insemark` will colourise the presented list of bookmarks to help visually distinguish the bookmarked directory from the associated comment.
+  * If no selector (above) is user-configured, then this value is set according to the automatically-chosen selector, otherwise the default is unset (i.e., no colourisation).
 
 
 ## Usage

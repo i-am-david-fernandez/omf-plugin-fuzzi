@@ -8,8 +8,11 @@ function __get_marks_for_selection -a bookmark_file
         set -l elements (string split "#" $mark)
         set_color normal
         echo -n $elements[1]
-        set_color blue
-        echo " #"$elements[2]
+        if test -n "$inse_colourised"
+            set_color blue
+        end
+        echo "  #"$elements[2]
+        set_color normal
     end
 end
 
@@ -39,7 +42,7 @@ function insemark -d "Create/navigate to bookmarked directories with interactive
     if test -e $bookmark_file
         __get_mark $bookmark_file | read bookmark_dir
         if test -n "$bookmark_dir"
-           cd $bookmark_dir
+            cd $bookmark_dir
         end
     else
         echo "No bookmarks stored."
