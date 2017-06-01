@@ -1,7 +1,7 @@
-function fkill -d "Kill one or more processes with interactive fuzzy process selection."
+function insekill -d "Kill one or more processes with interactive fuzzy process selection."
 
     set -l tmp (tempfile)
-    ps axf | eval $fuzzi_selector  > $tmp
+    ps axf | eval $inse_selector  > $tmp
 
     for p in (cat $tmp)
         echo "Killing [$p]"

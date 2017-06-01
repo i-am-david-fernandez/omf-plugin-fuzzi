@@ -1,4 +1,4 @@
-function fup -d "Navigate to a parent directory with interactive fuzzy selection."
+function inseup -d "Navigate to a parent directory with interactive fuzzy selection."
 
     set -l path_file (tempfile)
 
@@ -11,7 +11,7 @@ function fup -d "Navigate to a parent directory with interactive fuzzy selection
     end
 
     set path ''
-    cat $path_file | eval $fuzzi_selector | read path
+    cat $path_file | eval $inse_selector | read path
     if test -n "$path"
         cd $path
     end

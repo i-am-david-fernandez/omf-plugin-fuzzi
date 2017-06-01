@@ -1,6 +1,6 @@
-function fbmk -d "Create/navigate to bookmarked directories with interactive fuzzy selection."
+function insemark -d "Create/navigate to bookmarked directories with interactive fuzzy selection."
 
-    set -l bookmark_file "$HOME/.fuzzi.bookmarks"
+    set -l bookmark_file "$HOME/.inse.bookmarks"
 
     for arg in $argv
         set -e argv[1]
@@ -13,7 +13,7 @@ function fbmk -d "Create/navigate to bookmarked directories with interactive fuz
     end
 
     if test -e $bookmark_file
-        cat $bookmark_file | eval $fuzzi_selector | read bookmark
+        cat $bookmark_file | eval $inse_selector | read bookmark
         if test -n "$bookmark"
            set -l bookmark_dir (echo $bookmark | sed -e 's/\s*#.*//g')
            cd $bookmark_dir
