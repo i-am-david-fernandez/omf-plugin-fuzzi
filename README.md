@@ -13,7 +13,7 @@
 
 This plugin provides a set of interactive-selection (inse) wrappers around various tools to provide an effective means of selecting things (e.g., files, processes) for futher action.
 
-This plugin uses an external selector program that must be installed separately and configured appropriatly (see [Configuration](#Configuration)).
+This plugin uses an external selector program that must be installed separately and configured appropriately (see [Configuration](#Configuration)).
 
 
 ## Install
