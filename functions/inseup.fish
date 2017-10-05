@@ -1,6 +1,6 @@
 function inseup -d "Navigate to a parent directory with interactive fuzzy selection."
 
-    set -l path_file (tempfile)
+    set -l path_file $HOME/.inseup.(echo %self)
 
     ## Compose a list of directories starting with ourself and progressing
     ## up until we hit the root.
